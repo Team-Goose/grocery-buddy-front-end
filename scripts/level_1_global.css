@@ -7,6 +7,9 @@
     font-family: ubuntu;
     font-size: 14px;
 }
+body {
+margin: 0;
+}
 
 .tb{
     position: absolute;
@@ -51,4 +54,25 @@
     text-decoration: none;
     color: black;
     font-family: ubuntu;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    top: 10%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+.centered {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: forestgreen; */
+    font-family: ubuntu;
+    border-radius: 5px;
+    width: 25%;
+    font-size: 400%;
+
 }
