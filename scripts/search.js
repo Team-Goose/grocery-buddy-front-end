@@ -49,6 +49,26 @@ function generateList() {
                 stock.style.color = "red";
                 stock.innerHTML = "Out of stock";
             }
+            let add = document.createElement("DIV");
+            add.classList.add("table-text");
+            add.classList.add("add");
+            add.onclick = function(){
+                var result;
+                var xhttp = new XMLHttpRequest();
+                //add item to id's list
+                // xhttp.open("GET", "https://198.58.101.98/list/add/" + document.cookie.id + "/" + get.id);
+                // xhttp.responseType = "json";
+                // xhttp.onload = function(){
+                //     result = xhttp.response;
+                // }
+                // xhttp.send();
+                // console.log(document.cookie);
+                // debugger;
+
+                alert("Successfully added '" + get.name + "' to your list!");
+                window.location.href="/mylist";
+            }
+            add.innerHTML = " + ";
 
             let imageTd = document.createElement("TD");
             imageTd.style.height = "100%";
@@ -62,12 +82,16 @@ function generateList() {
             let stockTd = document.createElement("TD");
             stockTd.style.height = "100%";
             stockTd.appendChild(stock);
+            let addTd = document.createElement("TD");
+            addTd.style.height = "100%";
+            addTd.appendChild(add);
 
             let tr = document.createElement("TR");
             tr.appendChild(imageTd);
             tr.appendChild(nameTd);
             tr.appendChild(priceTd);
             tr.appendChild(stockTd);
+            tr.appendChild(addTd);
             document.getElementById("listTable").appendChild(tr);
         }
     }
@@ -93,12 +117,15 @@ function generateList() {
     <td style="height: 100%" v-if="{{ item.stock }} != 'Available' || !{{ item.offerType }}.includes('STORE')">
         <div class="table-text" style="color:red">Out of stock</div>
     </td>
+    <td style="height: 100%">
+        <div class="table-text" style="background-color: forestgreen; width: 30%; height: 30%;" onclick="add({{ item }})"> + </div>
+    </td>
 </tr> */
 
 window.onload = function(){
-    if(!document.cookie){
-        window.location.href = "/access-failure";
-    } else{
+    // if(!document.cookie){
+    //     window.location.href = "/access-failure";
+    // } else{
         main();
-    }
+    // }
 }

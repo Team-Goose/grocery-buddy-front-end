@@ -1,6 +1,10 @@
 var cookiehtml = '<a href="/login" class="login">log in</a>';
-window.onload = function(){
-    if(document.cookie.id >= 0) cookiehtml = '<a href="/mylist" class="login">account</a>';
+function cookies(){
+    if(document.cookie.id != undefined) {
+        cookiehtml = '<a href="/mylist" class="login">account</a>';
+    }
+    // console.log(document.cookie.id);
+    // debugger;
 }
 
 Vue.component('toolbar', {

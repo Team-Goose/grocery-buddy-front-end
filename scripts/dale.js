@@ -38,13 +38,6 @@ function generateUserList() {
     stock.classList.add("table-text");
         stock.style.color = "forestgreen";
         stock.innerHTML = "In stock";
-    let rem = document.createElement("DIV");
-    rem.classList.add("table-text");
-    rem.classList.add("rem");
-    rem.onclick = function(){
-        document.getElementById("0").parentNode.removeChild(document.getElementById("0"));
-    }
-    rem.innerHTML = " - ";
 
     let imageTd = document.createElement("TD");
     imageTd.style.height = "100%";
@@ -58,16 +51,12 @@ function generateUserList() {
     let stockTd = document.createElement("TD");
     stockTd.style.height = "100%";
     stockTd.appendChild(stock);
-    let remTd = document.createElement("TD");
-    remTd.style.height = "100%";
-    remTd.appendChild(rem);
 
     let tr = document.createElement("TR");
     tr.appendChild(imageTd);
     tr.appendChild(nameTd);
     tr.appendChild(priceTd);
     tr.appendChild(stockTd);
-    tr.appendChild(remTd);
     tr.id = 0;
     document.getElementById("listTable").appendChild(tr);
 
@@ -86,13 +75,6 @@ function generateUserList() {
     stock2.classList.add("table-text");
         stock2.style.color = "forestgreen";
         stock2.innerHTML = "In stock";
-    let rem2 = document.createElement("DIV");
-    rem2.classList.add("table-text");
-    rem2.classList.add("rem");
-    rem2.onclick = function(){
-        document.getElementById("1").parentNode.removeChild(document.getElementById("1"));
-    }
-    rem2.innerHTML = " - ";
 
     let imageTd2 = document.createElement("TD");
     imageTd2.style.height = "100%";
@@ -106,16 +88,12 @@ function generateUserList() {
     let stockTd2 = document.createElement("TD");
     stockTd2.style.height = "100%";
     stockTd2.appendChild(stock2);
-    let remTd2 = document.createElement("TD");
-    remTd2.style.height = "100%";
-    remTd2.appendChild(rem2);
 
     let tr2 = document.createElement("TR");
     tr2.appendChild(imageTd2);
     tr2.appendChild(nameTd2);
     tr2.appendChild(priceTd2);
     tr2.appendChild(stockTd2);
-    tr2.appendChild(remTd2);
     tr2.id = 1;
     document.getElementById("listTable").appendChild(tr2);
 }

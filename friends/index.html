@@ -4,12 +4,63 @@
         <link rel="stylesheet" href="/scripts/level_2_global.css"></link>
         <link rel="icon" type="image/png" href="/assets/leaf_logo.png"/>
         <title>Friends</title>
+        <!-- <script>
+            var cookiehtml = '<a href="/login" class="login">log in</a>';
+            function cookies(){
+                if(document.cookie.id != undefined) {
+                    cookiehtml = '<a href="/mylist" class="login">account</a>';
+                }
+                console.log(document.cookie.id);
+                // debugger;
+            }
+            cookies();
+        </script> -->
+        <style>
+            .list-title{
+                font-family: ubuntu;
+                text-decoration: underline;
+                left: 5%;   
+            }
+
+            .list-container{
+                position: absolute;
+                top: 12%;
+            }
+
+            .table-image{
+                max-width: 100px;
+                max-height: 100px;
+            }
+
+            .table-text{
+                vertical-align: middle;
+                display: inline-block;
+                margin: auto;
+                font-family: ubuntu;
+            }
+
+            .rem{
+                color: forestgreen;
+            }
+
+            .rem:hover{
+                cursor: pointer;
+            }
+        </style>
     </head>
     <body>
         <div id="toolbarContainer">
             <toolbar></toolbar>
         </div>
+        <div>
+            <div id="userList" class="list-container">
+                <h1 class="list-title">Friends</h1>
+                <a href="/mylist"><button style="background-color: forestgreen;">My list</button></a>
+                <table id="listTable" style="border-collapse: separate; border-spacing: 30px;"></table>
+            </div>
+        </div>
     </body>
     <script src="/scripts/vue.js"></script>
     <script src="/scripts/index.js"></script>
+    <script src="/scripts/friends.js"></script>
 </html>

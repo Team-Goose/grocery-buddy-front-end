@@ -7,20 +7,25 @@ var form = new Vue({
 })
 
 function submit(){
-    console.log(form.un + ", " + form.pw);
-
-    var result;
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "https://buddyapi.jackmal.com/login/" + form.un + "/" + form.pw);
-    xhttp.responseType = "json";
-    xhttp.onload = function(){
-        result = xhttp.response;
-    }
-    xhttp.send();
-    if(result) document.cookie = "id=" + result.id;
-    else document.cookie = undefined;
-    console.log(document.cookie);
-    // debugger;
-
-    window.location.href = "/mylist";
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+      
+    fetch("http://198.58.101.98/login/deuce/pass", requestOptions)
+        .then(response => response.text())
+        .then((result) => {
+            console.log(result);
+            // let temp = JSON.parse(result);
+            // document.cookie = "id=" + temp.id;
+            // console.log(document.cookie);
+            // debugger;
+        })
+        .catch((error) => {
+            console.log('error', error);
+            document.cookie = undefined;
+        })
+        .finally(function(){
+            window.location.href = "/mylist";
+        });
 }
