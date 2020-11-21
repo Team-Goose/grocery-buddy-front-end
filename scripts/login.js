@@ -8,4 +8,5 @@ var form = new Vue({
 
 function submit(){
     console.log(form.un + ", " + form.pw);
+    window.location.href = "/mylist";
 }
