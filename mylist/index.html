@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="../scripts/vue.js"></script>
-        <script src="../scripts/index.js"></script>
         <link rel="stylesheet" href="../scripts/level_2_global.css"></link>
         <link rel="icon" type="image/png" href="../assets/leaf_logo.png"/>
         <title>My List</title>
     </head>
     <body>
-        <div id="toolbar" class="tb">
-            <div id="tbcontent" class="tbc">
-                <div style="width: 13%;">
-                    <a href="../">
-                        <img src="../assets/leaf_logo.png" style="height: 80%; margin-left: 30%; margin-top: 1%; margin-bottom: auto;"/>
-                    </a>
-                </div>
-                <span class="tbspacer"></span>
-                <a href="../login" class="login">log in</a>
-            </div>
-            <div id="tblineContainer" class="tblcontainer">
-                <div id="tbline" class="tbl"></div>
-            </div>
+        <div id="toolbarContainer">
+            <toolbar full-logo=false></toolbar>
         </div>
     </body>
+    <script src="../scripts/vue.js"></script>
+    <script src="../scripts/index.js"></script>
 </html>
