@@ -32,6 +32,10 @@
             <br/>
             <br/>
             <div id="form" style="font-family: ubuntu; font-size: 14px;">
+                <label for="email" class="field-label">EMAIL</label>
+                <input class="full-logo" type="text" name="email" v-model="em"/>
+                <br/>
+                <br/>
                 <label for="username" class="field-label">USERNAME</label>
                 <input class="full-logo" type="text" name="username" v-model="un"/>
                 <br/>
@@ -40,11 +44,15 @@
                 <input class="full-logo" type="password" v-model="pw"/>
                 <br/>
                 <br/>
+                <label class="field-label">CONFIRM PASSWORD</label>
+                <input class="full-logo" type="password" v-model="pw2"/>
+                <br/>
+                <br/>
                 <div style="text-align: center;">
-                    <button style="font-family: ubuntu;" onclick="submit()">Log in</button>
+                    <button style="font-family: ubuntu;" onclick="submit()">Sign up</button>
                 </div>
                 <br/>
-                <div style="text-align: center;">Don't have an account? <a href="/signup" style="color:forestgreen">Sign up!</a></div>
+                <div style="text-align: center;">Already have an account? <a href="/login" style="color:forestgreen">Log in!</a></div>
             </div>
         </div>
     </body>
