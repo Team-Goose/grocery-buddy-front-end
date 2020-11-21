@@ -1,7 +1,7 @@
 const userList = document.getElementById("userList");
 let items;
 async function getJson() {
-    await fetch("scripts/items.json")
+    await fetch("/scripts/items.json")
     .then(response => {
        return response.json();
     }).then(function (data) {
