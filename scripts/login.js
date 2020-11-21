@@ -1,6 +1,11 @@
-var title = new Vue({
-    el: '#title',
+var form = new Vue({
+    el: "#form",
     data: {
-        title: "Log in"
+        un: "",
+        pw: ""
     }
-});
+})
+
+function submit(){
+    console.log(form.un + ", " + form.pw);
+}
