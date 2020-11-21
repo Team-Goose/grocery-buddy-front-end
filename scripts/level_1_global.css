@@ -1,6 +1,6 @@
 @font-face{
     font-family: ubuntu;
-    src: url(../assets/Ubuntu-Regular.ttf);
+    src: url(/assets/Ubuntu-Regular.ttf);
 }
 
 :host {
@@ -57,11 +57,11 @@ margin: 0;
 }
 
 .container {
+    position: absolute;
     text-align: center;
     color: white;
-    top: 10%;
-    margin-right: auto;
-    margin-left: auto;
+    top: 12%;
+    height: 88%;
   }
 
 .centered {
@@ -69,7 +69,6 @@ margin: 0;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background-color: forestgreen; */
     font-family: ubuntu;
     border-radius: 5px;
     width: 25%;
