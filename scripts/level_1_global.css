@@ -7,8 +7,9 @@
     font-family: ubuntu;
     font-size: 14px;
 }
+
 body {
-margin: 0;
+    margin: 0;
 }
 
 .tb{
@@ -64,14 +65,24 @@ margin: 0;
     width: 100%;
   }
 
-.centered {
+.centered-title {
     position: absolute;
-    top: 45%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: ubuntu;
     border-radius: 5px;
     width: 25%;
     font-size: 400%;
+}
 
+.centered-mission {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: ubuntu;
+    border-radius: 5px;
+    width: 50%;
+    font-size: 24px;
 }
