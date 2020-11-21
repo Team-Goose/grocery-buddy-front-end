@@ -1,9 +1,54 @@
-<html lang="en">
-<head>
-    <script src="scripts/vue.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <h1>This is a search</h1>
-</body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/scripts/level_1_global.css"></link>
+        <link rel="icon" type="image/png" href="/assets/leaf_logo.png"/>
+        <title>Product Search</title>
+        <style>
+            .search-container{
+                position: absolute;
+                top: 12%;
+                left: 3.5%;
+            }
+
+            .search-title{
+                font-family: ubuntu;
+                text-decoration: underline;
+                left: 5%;
+            }
+
+            .ubuntu{
+                font-family: ubuntu;
+                display: inline-block;
+            }
+
+            .table-image{
+                max-width: 100px;
+                max-height: 100px;
+            }
+
+            .table-text{
+                vertical-align: middle;
+                display: inline-block;
+                margin: auto;
+                font-family: ubuntu;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="toolbarContainer">
+            <toolbar></toolbar>
+        </div>
+        <div>
+            <div id="userList" class="search-container">
+                <h1 class="search-title">Product Search</h1>
+                <input id="searchbar" type="text" class="ubuntu" v-model="searchTerm"/>
+                <button class="ubuntu" onclick="term()">Search</button>
+                <table id="listTable" style="border-collapse: separate; border-spacing: 30px;"></table>
+            </div>
+        </div>
+        <script src="/scripts/vue.js"></script>
+        <script src="/scripts/index.js"></script>
+        <script src="/scripts/search.js"></script>
+    </body>
 </html>

@@ -1,17 +1,7 @@
-const userList = document.getElementById("userList");
 let items;
-async function getJson() {
-    await fetch("/scripts/items.json")
-    .then(response => {
-       return response.json();
-    }).then(function (data) {
-        items = data;
-    });
-}
 
-async function main() {
-    await getJson();
-    // listDisplay.items = items;
+function main() {
+    items = JSON.parse(document.cookie.list);
     generateUserList();
 }
 
@@ -62,7 +52,8 @@ function generateUserList() {
     }
 }
 
-{/* <tr>
+/*  STRUCTURE TO FOLLOW
+<tr>
     <td>
         <img class="table-image" src="{{ item.thumbnailImage }}"/>
     </td>
@@ -81,22 +72,12 @@ function generateUserList() {
     <td style="height: 100%" v-if="{{ item.stock }} != 'Available' || !{{ item.offerType }}.includes('STORE')">
         <div class="table-text" style="color:red">Out of stock</div>
     </td>
-</tr> */}
+</tr> */
 
-main();
-
-// Vue.component('grocery-list-item', {
-//     template: '<tr><td><img class="table-image" src="{{ item.thumbnailImage }}"/></td><td style="height: 100%"><div class="table-text">{{ item.name }}</div></td><td style="height: 100%" v-if="{{ item.msrp }} > {{ item.salePrice }}"><div class="table-text" style="color:forestgreen">{{ item.salePrice }}</div></td><td style="height: 100%" v-if="{{ item.msrp }} <= {{ item.salePrice }}"><div class="table-text">{{ item.msrp }}</div></td><td style="height: 100%" v-if="{{ item.stock }} == \'Available\' && {{ item.offerType }}.includes(\'STORE\')"><div class="table-text" style="color:forestgreen">In stock</div></td><td style="height: 100%" v-if="{{ item.stock }} != \'Available\' || !{{ item.offerType }}.includes(\'STORE\')"><div class="table-text" style="color:red">Out of stock</div></td></tr>',
-//     data () {
-//         return{
-//             items: listDisplay.items
-//         }
-//     }
-// });
-
-// var listDisplay = new Vue({
-//     el: '#listTable',
-//     data: {
-//         items: null
-//     }
-// });
+window.onload = function(){
+    if(!document.cookie){
+        window.location.href = "/access-failure";
+    } else{
+        main();
+    }
+}
